@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body align="center">
+<div></div>
+<table  border="1" cellpadding="7">
+    <tr>
+        <td colspan=10> <input id="display" type=" text "/></td>
+    </tr>
+    <tr>
+        <td> <button typye="button" value= "C" onclick="">C</button> </td>
+        <td> <button typye="button" value= "AC" onclick="allClear()">AC</button> </td>
+        <td> <button typye="button" value= "%" onclick="showMessage()">%</button> </td>
+        <td> <button typye="button" value= "/" onclick="showMessage(this)">/</button> </td>
+    </tr>
+    <tr>
+        <td> <button typye="button" value= "7" onclick="showMessage(this)">7</button> </td>
+        <td> <button typye="button" value= "8" onclick="showMessage(this)">8</button> </td>
+        <td> <button typye="button" value= "9" onclick="showMessage(this)">9</button> </td>
+        <td> <button typye="button" value= "*" onclick="showMessage(this)">X</button> </td>
+    </tr>
+    <tr>
+        <td> <button typye="button" value= "4" onclick="showMessage(this)">4</button> </td>
+        <td> <button typye="button" value= "5" onclick="showMessage(this)">5</button> </td>
+        <td> <button typye="button" value= "6" onclick="showMessage(this)">6</button> </td>
+        <td> <button typye="button" value= "-" onclick="showMessage(this)">-</button> </td>
+    </tr>
+    <tr>
+        <td> <button typye="button" value= "1" onclick="showMessage(this)">1</button> </td>
+        <td> <button typye="button" value= "2" onclick="showMessage(this)">2</button> </td>
+        <td> <button typye="button" value= "3" onclick="showMessage(this)">3</button> </td>
+        <td> <button typye="button" value= "+" onclick="showMessage(this)">+</button> </td>
+    </tr>
+    <tr>
+        <td> <button typye="button" value= "0" onclick="showMessage(this)">0</button> </td>
+        <td> <button typye="button" value= "." onclick="showMessage(this)">.</button> </td>
+        <td> <button typye="button" value= "=" onclick="caculate()">=</button> </td>
+    </tr>
+</table>
+<script>
+    function showMessage(a) {
+        let letter = a.getAttribute("value");
+        let calculator = document.getElementById("display").value;
+        document.getElementById("display").value = calculator + letter;
+    }
+    function caculate() {
+        let expression = document.getElementById("display").value;
+        document.getElementById("display").value = eval(expression);
+    }
+    function allClear() {
+        document.getElementById("display").value ="";
+    }
+</script>
+</body>
+</html>
